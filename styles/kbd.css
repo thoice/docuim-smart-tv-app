@@ -1,0 +1,41 @@
+#keyboard_wrapper {
+	display: none; 
+	position: absolute;
+	color: white;
+    background-color: #111522;
+}
+
+.kbd-key:focus {
+	outline-style: none;
+	background-color: #ff7d66;
+}
+
+.kbd-key.widget {
+    display: inline-block;
+    width: 40px;
+    border: 1px solid;
+    line-height: 45px;
+    text-align: center;
+    font-size: 2em;
+    -webkit-user-select: none;
+    margin: 2px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.kbd-key.widget.size-2 {
+    width: 84px !important;
+}
+
+.kbd-key.widget.size-4 {
+    width: 171px !important;
+}
+
+.kbd-key.widget.size-8 {
+    width: 346px !important;
+}
+
+.kbd-key.widget.size-half {
+    width: 18px !important;
+    border: none;
+}

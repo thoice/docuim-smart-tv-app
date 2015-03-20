@@ -1,0 +1,9 @@
+{
+  "name": "docuim-smart-tv-app",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-compress": "~0.13.0",
+    "grunt-contrib-compass": "~1.0.1"
+  }
+}

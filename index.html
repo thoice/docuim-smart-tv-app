@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="styles/main.css" />
+<link rel="stylesheet" href="styles/player.css" />
+<link rel="stylesheet" href="styles/grid.css" />
+<link rel="stylesheet" href="styles/info.css" />
+<link rel="stylesheet" href="styles/kbd.css" />
+<script src="scripts/dbg.js"></script>
+<script src="scripts/utils.js"></script>
+<script src="scripts/settings.js"></script>
+<script src="scripts/kbd.js"></script>
+<script src="scripts/docuim.js"></script>
+<script src="scripts/grid.js"></script>
+<script src="scripts/menu.js"></script>
+<script src="scripts/iteminfo.js"></script>
+<script src="scripts/main.js"></script>
+<script>
+	Keys = {
+		13: 'enter',
+		33: 'pageup',
+		34: 'pagedown',
+		35: 'end',
+		36: 'home',
+		37: 'left',
+		38: 'up',
+		39: 'right',
+		40: 'down'
+	};
+</script>
+</head>
+<body onload="Main.bodyLoadHandler();">
+<div id="main_container">
+	<div class="scene" id="catalog_grid_scene">
+		<header id="title_placeholder"></header>
+		<section id="catalog_grid_wrapper">
+			<div class="pager" id="pager_left" tabindex="-1" data-enter-handler="pageLeft"><span class="pager-inner">&lt;</span></div>
+			<div id="grid"></div>
+			<div class="pager" id="pager_right" tabindex="-1" data-enter-handler="pageRight"><span class="pager-inner">&gt;</span></div>
+		</section>
+		<footer style="position:absolute; bottom:0;">footer</footer>
+	</div>
+	<div class="scene" id="info_scene">
+		<section id="info_scene_left"></section>
+		<section id="info_scene_right">
+			<dl>          
+			    <dt class="info-tab first-to-focus tab-selected" tabindex="-1">Информация</dt>
+			    <dd class="info-tab-content" id="info_info"></dd>
+			    <dt class="info-tab" tabindex="-1" data-down-handler="switchToVideos">Видео</dt>
+			    <dd class="info-tab-content" id="info_video"></dd>
+			</dl>
+		</section>
+	</div>
+	<div class="scene" id="menu_scene">
+		<section id="menu_scene_left">
+			<ul>
+				<li class="first-to-focus main-menu-item" tabindex="-1" data-child="menu_type" data-enter-handler="showChildFor">тип</li>
+				<li class="main-menu-item" tabindex="-1" data-child="menu_genres" data-enter-handler="showChildFor">жанры</li>
+				<li class="main-menu-item" tabindex="-1" data-child="menu_years" data-enter-handler="showChildFor">годы</li>
+				<li class="main-menu-item" tabindex="-1" data-child="menu_search" data-enter-handler="showChildFor">поиск</li>
+				<li class="main-menu-item" tabindex="-1" data-child="menu_settings" data-enter-handler="showChildFor">настройки</li>
+			</ul>
+		</section>
+		<section id="menu_scene_right">
+            <div class="menu-section" id="menu_type">
+				<label><input type="checkbox" />Фильмы</label>
+				<label><input type="checkbox" />Сериалы</label>
+			</div>
+			<div class="menu-section" id="menu_genres"></div>
+            <div class="menu-section" id="menu_years">Годы</div>
+			<div class="menu-section" id="menu_search">
+				<input id="search_input" class="first-to-focus keyboarded" placeholder="что будем искать?" data-handler="search"/>
+			</div>
+			<div class="menu-section" id="menu_settings">
+				<input id="settings_username_input" class="first-to-focus keyboarded" placeholder="имя пользователя" />
+				<input id="settings_password_input" class="keyboarded" placeholder="пароль" type="password"/>
+                <input tyoe="submit" value="Сохранить" data-enter-handler="saveSettings"/>
+			</div>
+		</section>
+	</div>
+</div>
+<div id="keyboard_wrapper"></div>
+<div id="player_wrapper"></div>
+<div id="spinner" style="display: none; position: absolute; width: 960px; height: 540px; top: 0; left: 0; z-index: 1; background-color: rgba(100, 100, 150, 0.9); text-align: center; line-height: 500px;">
+	<span id="spinner-text" style="color: white; font-size: 3em;">Загружаем...</span>
+</div>
+</body>
+</html>

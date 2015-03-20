@@ -1,0 +1,41 @@
+#info_scene_left {
+    text-align: center;
+    padding-top: 15px;
+}
+
+dl {
+    margin: 0;
+}
+
+.info-tab {
+    font-size: 2em;
+    float: left;
+    padding: 5px;
+}
+
+.tab-selected {
+    background-color: #ff7d66;
+    color: #222944;
+}
+
+.info-tab-content {
+    display: none;
+    width: 100%;
+    float: right;
+    margin-left: -100%;
+    margin-top: 50px;
+}
+
+dt.tab-selected + dd {
+    display: block;
+}
+
+#info_video ul {
+    padding: 0;
+    margin: 0;
+    padding-top: 15px;
+}
+
+.video-item {
+    list-style: none;
+}
